@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import pokeball from "../../public/bg-pokeball.svg";
 
 export const Container = styled.li`
   width: 100%;
@@ -7,27 +8,32 @@ export const Container = styled.li`
   position: relative;
   background: #48d0b0;
   border-radius: 1.875rem;
+  background-size: cover;
+  background-image: url(${pokeball});
   padding: 2.5rem 0.9rem 1.25rem 1.5rem
   box-shadow: 0 0 0.9rem -0.3rem #595959;
 `;
 
 export const Index = styled.span`
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
   font-size: 1.5rem;
   font-weight: bold;
   opacity: 0.8;
+  margin-right: 1rem;
 `;
 
 export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: bolder;
   color: #fff;
+
+  h3 {
+    font-size: 1.5rem;
+    transform: translateY(0.9rem);
+  }
 `;
 
 export const Section = styled.section`
@@ -47,10 +53,12 @@ export const Section = styled.section`
     list-style-type: none;
   }
 
-  img {
-    width: 9rem;
-    right: 0.5rem;
-    bottom: 0.3rem;
-    position: absolute;
+  div {
+    width: 100%;
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(0.5rem);
   }
 `;
