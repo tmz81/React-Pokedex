@@ -1,10 +1,13 @@
-import { Home } from "./pages/Home";
 import GlobalStyle from "./styles/global";
+import { PokemonProvider } from "./hooks/usePokemon";
+import { Home } from "./pages/Home";
 
 export function App() {
   return (
     <>
-      <Home />
+      <PokemonProvider>
+        <Home />
+      </PokemonProvider>
       <GlobalStyle />
     </>
   )

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pokeball from "../../public/bg-pokeball.svg";
+import pokeball from "/bg-pokeball.svg";
 
 export const Container = styled.li`
   width: 100%;
