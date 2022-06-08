@@ -1,10 +1,11 @@
+import { Home } from "./pages/Home";
 import GlobalStyle from "./styles/global";
 
 export function App() {
   return (
-    <div>
-      <h1>Pokedéx</h1>
+    <>
+      <Home />
       <GlobalStyle />
-    </div>
+    </>
   )
 }
