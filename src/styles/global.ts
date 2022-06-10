@@ -15,6 +15,10 @@ export default createGlobalStyle`
     padding: 2.5rem 1.25rem;
   }
 
+  html, body {
+    overflow: hidden;
+  }
+
   body {
     background-color: #f1f1f1;
     background-image: url(${bgPokeball});

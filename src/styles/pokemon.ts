@@ -6,7 +6,7 @@ interface HeaderProps {
 }
 
 interface SectionProps {
-  sprite: string;
+  sprites: string;
 }
 
 export const Container = styled.li`
@@ -14,10 +14,12 @@ export const Container = styled.li`
   height: 12rem;
   list-style: none;
   border-radius: 1.875rem;
-  background-size: 20%;
+  background-size: 18%;
+  background-position-y: 8px;
+  background-position-x: 38px;
   background-image: url(${pokeball});
   background-repeat: no-repeat;
-  padding: 2.5rem 0.9rem 1.25rem 1.5rem;
+  padding: 2.5rem 0.9rem 1.50rem 1.5rem;
   box-shadow: 0 0 0.9rem -0.3rem #f1f1f1;
 
   &:hover {
@@ -74,7 +76,7 @@ export const Header = styled.header<HeaderProps>`
   color: #fff;
 
   h3 {
-    transform: translateY(0.9rem);
+    transform: translateY(1.4rem);
     
     ${props =>
       props.nameLength > 12 && css`
@@ -102,14 +104,14 @@ export const Section = styled.section<SectionProps>`
     font-weight: bolder;
     text-align: center;
     padding: 8px 25px;
-    margin-bottom: 10px;
-    transform: translateY(10px);
+    margin-bottom: 5px;
+    transform: translateY(-15px);
   }
 
   div {
     ${props => 
-      props.sprite && css`
-      background-img: url(${props.sprite});
+      props.sprites && css`
+      background-img: url(${props.sprites});
     `}
 
     width: 100%;

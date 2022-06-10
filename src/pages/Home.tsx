@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Header, Logo, PokemonList  } from "../styles/home";
-import { PokemonItem } from "../components/Pokemon";
-// import { usePokemon } from "../hooks/usePokemon";
+import { Pokemon } from "../components/Pokemon";
 import { api } from "../services/api";
 import { SearchBar } from "../components/SearchBar";
 
@@ -50,7 +49,7 @@ export function Home() {
   }, []);
 
   useEffect(() => {
-    getPokemonList(1, 10);
+    getPokemonList(1, 20);
   }, [getPokemonList]);
   
   return (
@@ -62,9 +61,8 @@ export function Home() {
       <section>
         <PokemonList>
           {pokedex.map(pokemon => (
-            <PokemonItem 
+            <Pokemon 
             pokemon={pokemon}
-            key={pokemon.order}
             sprite={pokemon.sprites.other['official-artwork'].front_default}  
           />
           ))}

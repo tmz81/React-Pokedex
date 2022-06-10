@@ -10,7 +10,7 @@ export function SearchBar() {
 
   return (
     <Form onSubmit={handleSubmitSearch}>
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder="Pesquisa Pokémons" />
       <button type="submit">
         <FaSearch />
       </button>

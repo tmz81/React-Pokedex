@@ -11,6 +11,7 @@ export const Form = styled.form`
     border: 1px solid #ccc;
     font-size: 1.25rem;
     outline: none;
+    opacity: 0.8;
   }
 
   button {
@@ -22,6 +23,7 @@ export const Form = styled.form`
     background-color: #ccc;
     color: #000;
     outline: none;
+    opacity: 0.8;
   }
 
   button:hover {

@@ -26,7 +26,7 @@ interface PokemonType {
   };
 }
 
-export function PokemonItem({ pokemon, sprite }: PropsPokemon) {
+export function Pokemon({ pokemon, sprite }: PropsPokemon) {
   const catchPokemons = useCallback((name: string) => {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }, []);
@@ -35,9 +35,9 @@ export function PokemonItem({ pokemon, sprite }: PropsPokemon) {
     <Container className={`${pokemon.types[0].type.name}-type`}>
       <Header nameLength={pokemon.name.length}>
         <h3>{catchPokemons(pokemon.name)}</h3>
-        <Index>#{`000${pokemon.order}`.slice(-3)}</Index>
+        <Index>#{`${pokemon.order}`.slice(-3)}</Index>
       </Header>
-      <Section sprite={sprite}>
+      <Section sprites={sprite}>
         <ul>
           {pokemon.types.map(type => (
             <li key={type.slot}>{catchPokemons(type.type.name)}</li>
