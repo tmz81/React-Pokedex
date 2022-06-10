@@ -1,18 +1,49 @@
+import { useCallback } from "react";
 import { Container, Header, Index, Section } from "../styles/pokemon";
 
-export function Pokemon() {
+interface PropsPokemon {
+  pokemon: Pokemon;
+  sprite: string;
+}
+
+interface Pokemon {
+  name: string;
+  order: number;
+  sprites: {
+    other: {
+      'official-artwork': {
+        front_default: string;
+      }
+    }
+  };
+  types: PokemonType[];
+}
+
+interface PokemonType {
+  slot: number;
+  type: {
+    name: string;
+  };
+}
+
+export function PokemonItem({ pokemon, sprite }: PropsPokemon) {
+  const catchPokemons = useCallback((name: string) => {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }, []);
+  
   return (
-    <Container>
-      <Header>
-        <h3>Bulbasaur</h3>
-        <Index>#001</Index>
+    <Container className={`${pokemon.types[0].type.name}-type`}>
+      <Header nameLength={pokemon.name.length}>
+        <h3>{catchPokemons(pokemon.name)}</h3>
+        <Index>#{`000${pokemon.order}`.slice(-3)}</Index>
       </Header>
-      <Section>
+      <Section sprite={sprite}>
         <ul>
-          <li>Grass</li>
-          <li>Poison</li>
+          {pokemon.types.map(type => (
+            <li key={type.slot}>{catchPokemons(type.type.name)}</li>
+          ))}
         </ul>
-        <div />
+        <div/>
       </Section>
     </Container>
   )

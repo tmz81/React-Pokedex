@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import LogoPokeAPI from "/pokeapi.png";
 
 export const Header = styled.header`
   margin-bottom: 1.875rem;
 `;
 
-export const Title = styled.h1`
-  font-size: 3rem;
-  color: #000;
+export const Logo = styled.div`
+  background-image: url(${LogoPokeAPI});
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 8rem;
 `;
 
 export const PokemonList = styled.ul`

@@ -1,3 +1,4 @@
+import bgPokeball from '/pokeball.svg';
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
@@ -15,7 +16,13 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #312e38;
+    background-color: #f1f1f1;
+    background-image: url(${bgPokeball});
+    background-repeat: no-repeat;
+    background-size: 35vw;
+    background-position-x: 4rem;
+    background-position-y: 8rem;
+    background-attachment: fixed;
   }
 
   body, input, button {
