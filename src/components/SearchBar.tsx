@@ -1,3 +1,4 @@
+import { Form } from '../styles/searchbar';
 import { FormEvent, useCallback } from "react";
 import { FaSearch } from 'react-icons/fa';
 
@@ -8,11 +9,11 @@ export function SearchBar() {
   }, []);
 
   return (
-    <form onSubmit={handleSubmitSearch}>
+    <Form onSubmit={handleSubmitSearch}>
       <input type="text" placeholder="Search" />
       <button type="submit">
         <FaSearch />
       </button>
-    </form>
+    </Form>
   )
 }
