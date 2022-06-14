@@ -37,7 +37,7 @@ export function PokemonItem({ pokemon, sprite }: PokemonItemProps) {
         <h3>{catchPokemons(pokemon.name)}</h3>
         <Index>#{`${pokemon.id}`}</Index>
       </Header>
-      <Section sprites={sprite}>
+      <Section sprite={sprite}>
         <ul>
           {pokemon.types.map(type => (
             <li key={type.slot}>{catchPokemons(type.type.name)}</li>

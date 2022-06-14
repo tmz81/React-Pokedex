@@ -6,21 +6,23 @@ interface HeaderProps {
 }
 
 interface SectionProps {
-  sprites: string;
+  sprite: string;
 }
 
 export const Container = styled.li`
   width: 100%;
-  height: 12rem;
+  height: 15rem;
   list-style: none;
   border-radius: 1.875rem;
-  background-size: 18%;
-  background-position-y: 8px;
-  background-position-x: 38px;
-  background-image: url(${pokeball});
-  background-repeat: no-repeat;
-  padding: 2.5rem 0.9rem 1.50rem 1.5rem;
   box-shadow: 0 0 0.9rem -0.3rem #f1f1f1;
+  
+  background-image: url(${pokeball});
+  background-position: bottom right;
+  background-size: 48%;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  padding: 2.5rem 0.9rem 1.50rem 1.5rem;
+  transition: 0.5s;
 
   &:hover {
     cursor: pointer;
@@ -70,14 +72,13 @@ export const Header = styled.header<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: bolder;
   color: #fff;
 
   h3 {
-    transform: translateY(1.4rem);
-    
     ${props =>
       props.nameLength > 12 && css`
         font-size: 1.5rem;
@@ -88,8 +89,8 @@ export const Header = styled.header<HeaderProps>`
 
 export const Section = styled.section<SectionProps>`
   display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
+  padding-bottom: 20px;
+  height: 95%;
 
   ul {
     display: flex;
@@ -105,13 +106,13 @@ export const Section = styled.section<SectionProps>`
     text-align: center;
     padding: 8px 25px;
     margin-bottom: 5px;
-    transform: translateY(-15px);
+    transform: translateY(15px);
   }
 
-  div {
+  div#pokemon_image {
     ${props => 
-      props.sprites && css`
-      background-img: url(${props.sprites});
+      props.sprite && css`
+      background-image: url(${props.sprite});
     `}
 
     width: 100%;
