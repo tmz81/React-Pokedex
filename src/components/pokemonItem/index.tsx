@@ -1,14 +1,14 @@
 import { useCallback } from "react";
-import { Container, Header, Index, Section } from "../styles/pokemon";
+import { Container, Header, Index, Section } from "./styles";
 
-interface PropsPokemon {
+interface PokemonItemProps {
   pokemon: Pokemon;
   sprite: string;
 }
 
 interface Pokemon {
+  id: number;
   name: string;
-  order: number;
   sprites: {
     other: {
       'official-artwork': {
@@ -26,7 +26,7 @@ interface PokemonType {
   };
 }
 
-export function Pokemon({ pokemon, sprite }: PropsPokemon) {
+export function PokemonItem({ pokemon, sprite }: PokemonItemProps) {
   const catchPokemons = useCallback((name: string) => {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }, []);
@@ -35,7 +35,7 @@ export function Pokemon({ pokemon, sprite }: PropsPokemon) {
     <Container className={`${pokemon.types[0].type.name}-type`}>
       <Header nameLength={pokemon.name.length}>
         <h3>{catchPokemons(pokemon.name)}</h3>
-        <Index>#{`${pokemon.order}`.slice(-3)}</Index>
+        <Index>#{`${pokemon.id}`}</Index>
       </Header>
       <Section sprites={sprite}>
         <ul>
@@ -43,7 +43,7 @@ export function Pokemon({ pokemon, sprite }: PropsPokemon) {
             <li key={type.slot}>{catchPokemons(type.type.name)}</li>
           ))}
         </ul>
-        <div/>
+        <div id="pokemon_image"/>
       </Section>
     </Container>
   )

@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { Header, Logo, PokemonList  } from "../styles/home";
-import { Pokemon } from "../components/Pokemon";
-import { api } from "../services/api";
-import { SearchBar } from "../components/SearchBar";
+import { Header, Logo, PokemonList } from "./styles";
+import { PokemonItem } from "../../components/pokemonItem";
+import { api } from "../../services/api";
+import { SearchBar } from "../../components/searchBar";
 
 interface Pokemon {
+  id: number;
   name: string;
   order: number;
   sprites: {
@@ -27,8 +28,8 @@ interface PokemonType {
 export function Home() {
   const [pokedex, setPokedex] = useState<Pokemon[]>([] as Pokemon[]);
 
-  const getPokemonList = useCallback(async (startId: number, endId: number) => {
-    for (let i = startId; i <= endId; i++) {
+  const GetListPokemons = useCallback(async (FirstId: number, LastId: number) => {
+    for (let i = FirstId; i <= LastId; i++) {
       const pokemonSearch = localStorage.getItem(
         `pokemon:${i}`,
       );
@@ -49,22 +50,23 @@ export function Home() {
   }, []);
 
   useEffect(() => {
-    getPokemonList(1, 20);
-  }, [getPokemonList]);
-  
+    GetListPokemons(1, 20);
+  }, [setPokedex]);
+
   return (
     <>
       <Header>
-        <Logo/>
+        <Logo />
         <SearchBar />
       </Header>
       <section>
         <PokemonList>
           {pokedex.map(pokemon => (
-            <Pokemon 
-            pokemon={pokemon}
-            sprite={pokemon.sprites.other['official-artwork'].front_default}  
-          />
+            <PokemonItem
+              key={pokemon.id}
+              pokemon={pokemon}
+              sprite={pokemon.sprites.other['official-artwork'].front_default}
+            />
           ))}
         </PokemonList>
       </section>

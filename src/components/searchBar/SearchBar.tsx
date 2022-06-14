@@ -1,4 +1,4 @@
-import { Form } from '../styles/searchbar';
+import { Form } from './styles';
 import { FormEvent, useCallback } from "react";
 import { FaSearch } from 'react-icons/fa';
 

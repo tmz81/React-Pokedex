@@ -10,11 +10,3 @@
   <img src="./public/ex.png" width="70%">
 </p>
 
-<p>
-
-[x] Get pokémons name  
-[ ] Show pokémons images  
-[ ] Pokémon description
-
-</p>
-
