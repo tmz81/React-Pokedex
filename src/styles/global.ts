@@ -12,11 +12,11 @@ export default createGlobalStyle`
   #root {
     margin: 0 auto;
     max-width: 960px;
-    padding: 2.5rem 1.25rem;
+    padding: 2.5rem;
   }
 
-  html, body {
-    overflow: hidden;
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
