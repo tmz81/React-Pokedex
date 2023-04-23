@@ -25,3 +25,26 @@ npm install
 
 npm run dev
 ```
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+  TAKS REFATORAÇÃO COMPLETA:
+      [] fazer o inpute de pesquisa funcionar; É trazer o resultado digitado via API
+      [] corrigir a sequência de evolução dos pokemons, exemplo: "Bulbasaur, Ivysaur, Venusaur"
+  
+    *STYLES*
+      [] Refatoração completa, trazer mais experiências ao usuário
+
+
+
+ -->
