@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import pokeball from "/bg-pokeball.svg";
 
 interface HeaderProps {
@@ -15,13 +15,13 @@ export const Container = styled.li`
   list-style: none;
   border-radius: 1.875rem;
   box-shadow: 0 0 0.9rem -0.3rem #f1f1f1;
-  
+
   background-image: url(${pokeball});
   background-position: bottom right;
   background-size: 48%;
   background-repeat: no-repeat;
   background-blend-mode: soft-light;
-  padding: 2.5rem 0.9rem 1.50rem 1.5rem;
+  padding: 2.5rem 0.9rem 1.5rem 1.5rem;
   transition: 0.5s;
 
   &:hover {
@@ -59,6 +59,13 @@ export const Container = styled.li`
       background-color: #8fd1fd;
     }
   }
+  &.yellow-type {
+    /* Adicionado para os Pokémon amarelos */
+    background-color: #fdd835;
+    li {
+      background-color: #ffeb3b;
+    }
+  }
 `;
 
 export const Index = styled.span`
@@ -79,11 +86,11 @@ export const Header = styled.header<HeaderProps>`
   color: #fff;
 
   h3 {
-    ${props =>
-      props.nameLength > 12 && css`
+    ${(props) =>
+      props.nameLength > 12 &&
+      css`
         font-size: 1.5rem;
-      `
-    }
+      `}
   }
 `;
 
@@ -110,10 +117,11 @@ export const Section = styled.section<SectionProps>`
   }
 
   div#pokemon_image {
-    ${props => 
-      props.sprite && css`
-      background-image: url(${props.sprite});
-    `}
+    ${(props) =>
+      props.sprite &&
+      css`
+        background-image: url(${props.sprite});
+      `}
 
     width: 100%;
     background-size: contain;
