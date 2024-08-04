@@ -59,11 +59,18 @@ export const Container = styled.li`
       background-color: #8fd1fd;
     }
   }
-  &.yellow-type {
+  &.electric-type {
     /* Adicionado para os Pokémon amarelos */
     background-color: #fdd835;
     li {
       background-color: #ffeb3b;
+    }
+  }
+  &.poison-type {
+    /* Adicionado para os Pokémon amarelos */
+    background-color: #A33EA1;
+    li {
+      background-color: #A33Ee1;
     }
   }
 `;
